@@ -14,6 +14,7 @@
 		B01FFD70289E60440053C438 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B01FFD6F289E60440053C438 /* Assets.xcassets */; };
 		B01FFD73289E60440053C438 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01FFD71289E60440053C438 /* LaunchScreen.storyboard */; };
 		B01FFD7F289E77A60053C438 /* CryptoCoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FFD7E289E77A60053C438 /* CryptoCoinTableViewCell.swift */; };
+		B0A83292289E807F006E438E /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A83291289E807F006E438E /* Coin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B01FFD72289E60440053C438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B01FFD74289E60440053C438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B01FFD7E289E77A60053C438 /* CryptoCoinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCoinTableViewCell.swift; sourceTree = "<group>"; };
+		B0A83291289E807F006E438E /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		B01FFD65289E60420053C438 /* CryptoVest */ = {
 			isa = PBXGroup;
 			children = (
+				B01FFD80289E7FEA0053C438 /* Models */,
 				B01FFD7A289E664B0053C438 /* Supporting Files */,
 				B01FFD7D289E67560053C438 /* Controllers */,
 				B01FFD7B289E665C0053C438 /* Stroryboards */,
@@ -100,6 +103,14 @@
 				B01FFD7E289E77A60053C438 /* CryptoCoinTableViewCell.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B01FFD80289E7FEA0053C438 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B0A83291289E807F006E438E /* Coin.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,6 +187,7 @@
 				B01FFD6B289E60420053C438 /* CoinsViewController.swift in Sources */,
 				B01FFD7F289E77A60053C438 /* CryptoCoinTableViewCell.swift in Sources */,
 				B01FFD67289E60420053C438 /* AppDelegate.swift in Sources */,
+				B0A83292289E807F006E438E /* Coin.swift in Sources */,
 				B01FFD69289E60420053C438 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
