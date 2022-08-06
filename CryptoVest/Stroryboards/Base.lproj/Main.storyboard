@@ -17,8 +17,30 @@
                     <view key="view" contentMode="scaleToFill" id="CZc-BW-IBV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lC3-zq-liv">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CryptoCoinCell" id="4CM-DE-4XP">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4CM-DE-4XP" id="998-M3-jfN">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="7E5-A0-MSZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lC3-zq-liv" firstAttribute="leading" secondItem="7E5-A0-MSZ" secondAttribute="leading" id="EAt-F6-bbj"/>
+                            <constraint firstItem="7E5-A0-MSZ" firstAttribute="trailing" secondItem="lC3-zq-liv" secondAttribute="trailing" id="L0c-yo-sJx"/>
+                            <constraint firstItem="7E5-A0-MSZ" firstAttribute="bottom" secondItem="lC3-zq-liv" secondAttribute="bottom" id="Ujv-iq-5av"/>
+                            <constraint firstItem="lC3-zq-liv" firstAttribute="top" secondItem="7E5-A0-MSZ" secondAttribute="top" id="e8q-IS-Snt"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Coins" image="CoinsImage" id="Amm-Vo-Vco"/>
                 </viewController>
