@@ -10,11 +10,18 @@ import UIKit
 final class CoinsViewController: UIViewController {
     private var coins = Coin.getCoins()
     @IBOutlet private var tableView: UITableView!
+    
+    @IBOutlet private var header: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        // Do any additional setup after loading the view.
+        let colorFrom = UIColor(named: "MainFrom")!
+        let colorTo = UIColor(named: "MainTo")!
+    
+        header.setGradientBackground(colorTop: colorFrom , colorBottom: colorTo)
+        
     }
 
 
@@ -41,3 +48,15 @@ extension CoinsViewController: UITableViewDataSource {
     
 }
 
+extension UIView {
+    func setGradientBackground(colorTop: UIColor, colorBottom: UIColor) {
+        //TODO: Fix the gradient problem
+        let gradientLayer = CAGradientLayer()
+            gradientLayer.colors = [colorTop.cgColor, colorBottom.cgColor]
+            gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
+            gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
+            gradientLayer.frame.size = self.frame.size
+
+            self.layer.insertSublayer(gradientLayer, at: 0)
+    }
+}
