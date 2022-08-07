@@ -24,6 +24,7 @@ extension CryptoCoinTableViewCell {
         coinImage.image = UIImage(named: coin.coinID)
         coinIDLabel.text = coin.coinID
         coinName.text = coin.name
+        //TODO: add gradient to change label background
         if coin.change >= 0 {
             changeLabel.backgroundColor = UIColor(named: "GreenTo")
             arrowImage = UIImage(named: "ArrowUp")!
