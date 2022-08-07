@@ -8,14 +8,12 @@
 import UIKit
 
 final class CryptoCoinTableViewCell: UITableViewCell {
-   
     @IBOutlet private var coinImage: UIImageView!
     @IBOutlet private var coinIDLabel: UILabel!
     @IBOutlet private var coinName: UILabel!
     @IBOutlet private var changeLabel: UILabel!
     @IBOutlet private var changeArrowImage: UIImageView!
     @IBOutlet private var priceLabel: UILabel!
-   
 }
 
 extension CryptoCoinTableViewCell {
@@ -24,7 +22,7 @@ extension CryptoCoinTableViewCell {
         coinImage.image = UIImage(named: coin.coinID)
         coinIDLabel.text = coin.coinID
         coinName.text = coin.name
-        //TODO: add gradient to change label background
+        // TODO: add gradient to change label background
         if coin.change >= 0 {
             changeLabel.backgroundColor = UIColor(named: "GreenTo")
             arrowImage = UIImage(named: "ArrowUp")!
@@ -35,8 +33,12 @@ extension CryptoCoinTableViewCell {
         changeArrowImage.image = arrowImage
         changeLabel.text = "\(abs(coin.change))%"
         changeLabel.setCornerRadius()
-        priceLabel.text = "$\(coin.price)"
-    
+
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.maximumFractionDigits = 2
+        formatter.currencyDecimalSeparator = ","
+        priceLabel.text = "$" + formatter.string(from: NSNumber(value: coin.price))!
     }
 }
 
