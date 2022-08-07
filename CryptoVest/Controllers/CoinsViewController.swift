@@ -33,7 +33,7 @@ extension CoinsViewController: UITableViewDataSource {
         guard let cell =  tableView.dequeueReusableCell(withIdentifier: "CryptoCoinTableViewCell", for: indexPath) as? CryptoCoinTableViewCell else { return UITableViewCell() }
         cell.setCoin(coin: coins[indexPath.row])
         if indexPath.row % 2 == 1 {
-            cell.backgroundColor = .placeholderText
+            cell.backgroundColor = .systemGray6
         }
         return cell
     }
