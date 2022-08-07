@@ -8,6 +8,7 @@
 import UIKit
 
 final class CryptoCoinTableViewCell: UITableViewCell {
+    @IBOutlet var changeView: UIView!
     @IBOutlet private var coinImage: UIImageView!
     @IBOutlet private var coinIDLabel: UILabel!
     @IBOutlet private var coinName: UILabel!
@@ -22,29 +23,28 @@ extension CryptoCoinTableViewCell {
         coinImage.image = UIImage(named: coin.coinID)
         coinIDLabel.text = coin.coinID
         coinName.text = coin.name
-        // TODO: add gradient to change label background
         if coin.change >= 0 {
-            changeLabel.backgroundColor = UIColor(named: "GreenTo")
+            changeView.setGradientBackground(colorTop: UIColor(named: "GreenFrom")!, colorBottom: UIColor(named: "GreenTo")!)
             arrowImage = UIImage(named: "ArrowUp")!
         } else {
-            changeLabel.backgroundColor = UIColor(named: "RedTo")
+            changeView.setGradientBackground(colorTop: UIColor(named: "RedFrom")!, colorBottom: UIColor(named: "RedTo")!)
             arrowImage = UIImage(named: "ArrowDown")!
         }
         changeArrowImage.image = arrowImage
         changeLabel.text = "\(abs(coin.change))%"
-        changeLabel.setCornerRadius()
+        changeView.setCornerRadius()
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.maximumFractionDigits = 2
         formatter.currencyDecimalSeparator = ","
-       
-        priceLabel.text = "$" + formatter.string(from: NSNumber(value:  coin.price))!
+
+        priceLabel.text = "$" + formatter.string(from: NSNumber(value: coin.price))!
     }
 }
 
 extension UIView {
     public func setCornerRadius() {
-        layer.cornerRadius = 0.5 * min(frame.width, frame.height)
+        layer.cornerRadius = 0.15 * min(frame.width, frame.height)
         layer.masksToBounds = true
     }
 }
