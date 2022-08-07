@@ -17,14 +17,19 @@ final class CoinsViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
+
+    override func viewDidLayoutSubviews() {
         let colorFrom = UIColor(named: "MainFrom")!
         let colorTo = UIColor(named: "MainTo")!
     
         header.setGradientBackground(colorTop: colorFrom , colorBottom: colorTo)
         
     }
-
-
 }
 
 extension CoinsViewController: UITableViewDelegate {
