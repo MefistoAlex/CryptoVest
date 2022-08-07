@@ -56,12 +56,16 @@ extension CoinsViewController: UITableViewDataSource {
 extension UIView {
     func setGradientBackground(colorTop: UIColor, colorBottom: UIColor) {
         //TODO: Fix the gradient problem
+       
         let gradientLayer = CAGradientLayer()
             gradientLayer.colors = [colorTop.cgColor, colorBottom.cgColor]
             gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
             gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
-            gradientLayer.frame.size = self.frame.size
-
+            gradientLayer.frame = self.bounds
+            
             self.layer.insertSublayer(gradientLayer, at: 0)
+        self.frame = self.bounds
+//        layoutSubviews()
     }
+    
 }

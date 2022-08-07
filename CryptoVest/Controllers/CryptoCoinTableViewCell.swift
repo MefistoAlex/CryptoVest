@@ -33,12 +33,12 @@ extension CryptoCoinTableViewCell {
         changeArrowImage.image = arrowImage
         changeLabel.text = "\(abs(coin.change))%"
         changeLabel.setCornerRadius()
-
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.maximumFractionDigits = 2
         formatter.currencyDecimalSeparator = ","
-        priceLabel.text = "$" + formatter.string(from: NSNumber(value: coin.price))!
+       
+        priceLabel.text = "$" + formatter.string(from: NSNumber(value:  coin.price))!
     }
 }
 
