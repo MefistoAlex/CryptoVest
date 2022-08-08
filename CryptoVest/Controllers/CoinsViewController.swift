@@ -28,9 +28,6 @@ final class CoinsViewController: UIViewController {
 
         navigationController?.navigationBar.barStyle = .black
     }
-
-    override func viewDidLayoutSubviews() {
-    }
 }
 
 extension CoinsViewController: UITableViewDelegate {
