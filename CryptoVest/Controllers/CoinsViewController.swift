@@ -11,21 +11,26 @@ final class CoinsViewController: UIViewController {
     private var coins = Coin.getCoins()
 
     @IBOutlet private var tableView: UITableView!
-    @IBOutlet private var header: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        view.layoutSubviews()
+        
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "logo")
+        navigationItem.titleView = imageView
+        
+        let colorFrom = UIColor(named: "MainFrom")!
+        let colorTo = UIColor(named: "MainTo")!
+        view.setGradientBackground(colorTop: colorFrom, colorBottom: colorTo)
+        
+        navigationController?.navigationBar.barStyle = .black
     }
 
     override func viewDidLayoutSubviews() {
-        let colorFrom = UIColor(named: "MainFrom")!
-        let colorTo = UIColor(named: "MainTo")!
-
-        header.setGradientBackground(colorTop: colorFrom, colorBottom: colorTo)
-    }
+        }
 }
 
 extension CoinsViewController: UITableViewDelegate {
