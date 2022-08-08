@@ -33,6 +33,7 @@ extension CryptoCoinTableViewCell {
         changeArrowImage.image = arrowImage
         changeLabel.text = "\(abs(coin.change))%"
         changeView.setCornerRadius()
+        
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.maximumFractionDigits = 2
@@ -44,7 +45,7 @@ extension CryptoCoinTableViewCell {
 
 extension UIView {
     public func setCornerRadius() {
-        layer.cornerRadius = 0.15 * min(frame.width, frame.height)
+        layer.cornerRadius = bounds.width / 8
         layer.masksToBounds = true
     }
 }
