@@ -27,6 +27,10 @@ final class CoinsViewController: UIViewController {
         view.setGradientBackground(colorTop: colorFrom, colorBottom: colorTo)
 
         navigationController?.navigationBar.barStyle = .black
+        
+        // making header without blur
+        navigationController?.navigationBar.standardAppearance.configureWithTransparentBackground()
+        
     }
 }
 
