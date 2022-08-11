@@ -19,5 +19,6 @@ extension ArticleTableViewCell {
         articleHeader.text = article.header
         authorAndDate.text = "\(article.authror), \(article.publicised)"
         articleImage.image = UIImage(named: article.image)
+        articleImage.layer.cornerRadius = articleImage.frame.height * 0.025
     }
 }

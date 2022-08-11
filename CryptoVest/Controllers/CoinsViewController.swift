@@ -16,20 +16,7 @@ final class CoinsViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        imageView.image = UIImage(named: "logo")
-        navigationItem.titleView = imageView
-
-        let colorFrom = UIColor(named: "MainFrom")!
-        let colorTo = UIColor(named: "MainTo")!
-        view.setGradientBackground(colorTop: colorFrom, colorBottom: colorTo)
-
-        navigationController?.navigationBar.barStyle = .black
-        
-        // making header without blur
-        navigationController?.navigationBar.standardAppearance.configureWithTransparentBackground()
+        setHeader()
         
     }
 }
@@ -51,6 +38,25 @@ extension CoinsViewController: UITableViewDataSource {
             cell.backgroundColor = .clear
         }
         return cell
+    }
+}
+
+extension UIViewController {
+    func setHeader() {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "logo")
+        navigationItem.titleView = imageView
+
+        let colorFrom = UIColor(named: "MainFrom")!
+        let colorTo = UIColor(named: "MainTo")!
+        view.setGradientBackground(colorTop: colorFrom, colorBottom: colorTo)
+
+         // making header without blur
+        navigationController?.navigationBar.standardAppearance.configureWithTransparentBackground()
+        navigationController?.navigationBar.barStyle = .black
+        
+       
     }
 }
 
