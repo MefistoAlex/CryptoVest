@@ -17,8 +17,8 @@ final class CoinsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         setHeader()
-        
     }
+
 }
 
 extension CoinsViewController: UITableViewDelegate {
@@ -52,11 +52,9 @@ extension UIViewController {
         let colorTo = UIColor(named: "MainTo")!
         view.setGradientBackground(colorTop: colorFrom, colorBottom: colorTo)
 
-         // making header without blur
+        // making header without blur
         navigationController?.navigationBar.standardAppearance.configureWithTransparentBackground()
-        navigationController?.navigationBar.barStyle = .black
-        
-       
+    
     }
 }
 

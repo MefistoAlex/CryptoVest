@@ -10,7 +10,7 @@ import UIKit
 final class NewsViewController: UIViewController {
     private let articles = Article.getNews()
     @IBOutlet var tableView: UITableView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -18,13 +18,12 @@ final class NewsViewController: UIViewController {
         setHeader()
     }
 }
+
 extension NewsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         articles.count
     }
-    
-    
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Article", for: indexPath) as! ArticleTableViewCell
         cell.setArticle(article: articles[indexPath.row])
@@ -33,5 +32,4 @@ extension NewsViewController: UITableViewDataSource {
 }
 
 extension NewsViewController: UITableViewDelegate {
-    
 }
