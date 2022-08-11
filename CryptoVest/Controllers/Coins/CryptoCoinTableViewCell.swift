@@ -8,7 +8,7 @@
 import UIKit
 
 final class CryptoCoinTableViewCell: UITableViewCell {
-    @IBOutlet var changeView: UIView!
+    @IBOutlet private var changeView: UIView!
     @IBOutlet private var coinImage: UIImageView!
     @IBOutlet private var coinIDLabel: UILabel!
     @IBOutlet private var coinName: UILabel!
@@ -23,6 +23,7 @@ extension CryptoCoinTableViewCell {
         coinImage.image = UIImage(named: coin.coinID)
         coinIDLabel.text = coin.coinID
         coinName.text = coin.name
+
         if coin.change >= 0 {
             changeView.setGradientBackground(colorTop: UIColor(named: "GreenFrom")!, colorBottom: UIColor(named: "GreenTo")!)
             arrowImage = UIImage(named: "ArrowUp")!
@@ -30,10 +31,11 @@ extension CryptoCoinTableViewCell {
             changeView.setGradientBackground(colorTop: UIColor(named: "RedFrom")!, colorBottom: UIColor(named: "RedTo")!)
             arrowImage = UIImage(named: "ArrowDown")!
         }
+
         changeArrowImage.image = arrowImage
         changeLabel.text = "\(abs(coin.change))%"
         changeView.setCornerRadius()
-        
+
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.maximumFractionDigits = 2
@@ -43,8 +45,8 @@ extension CryptoCoinTableViewCell {
     }
 }
 
-extension UIView {
-    public func setCornerRadius() {
+private extension UIView {
+    func setCornerRadius() {
         layer.cornerRadius = bounds.width / 8
         layer.masksToBounds = true
     }
