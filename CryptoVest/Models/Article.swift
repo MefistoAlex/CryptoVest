@@ -12,6 +12,7 @@ struct Article {
     let date: Date
     let image: String
 }
+
 extension Article {
     var publicised: String {
         let seconds = abs(date.timeIntervalSinceNow)
@@ -20,25 +21,25 @@ extension Article {
         if seconds < 60 {
             return "just now"
         }
-        
+
         // if time interval < 1 hour
         if seconds < 60 * 60 {
             return "\(Int(seconds / 60)) mins ago"
         }
-        
+
         // if time interval < 1 day
         if seconds < 60 * 60 * 24 {
             return "\(Int(seconds / (60 * 24))) hours ago"
         }
-        
+
         // if time interval < 10 days
         if seconds < 60 * 60 * 24 * 10 {
-            return "\(Int(seconds / (60 * 24 * 10 ))) days ago"
+            return "\(Int(seconds / (60 * 24 * 10))) days ago"
         }
-        
+
         return date.description
     }
-    
+
     static func getNews() -> [Article] {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -90,7 +91,7 @@ extension Article {
                 authror: "H. Nasser",
                 date: dateFormatter.date(from: "2022-08-02 12:50:00")!,
                 image: "Article7"
-            )
+            ),
         ]
     }
 }

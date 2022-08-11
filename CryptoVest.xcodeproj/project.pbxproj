@@ -14,6 +14,7 @@
 		B01FFD70289E60440053C438 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B01FFD6F289E60440053C438 /* Assets.xcassets */; };
 		B01FFD73289E60440053C438 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B01FFD71289E60440053C438 /* LaunchScreen.storyboard */; };
 		B01FFD7F289E77A60053C438 /* CryptoCoinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FFD7E289E77A60053C438 /* CryptoCoinTableViewCell.swift */; };
+		B036A82E28A57183002C88E9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B036A82D28A57183002C88E9 /* Extensions.swift */; };
 		B08BFB3E28A2746D00B7B442 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08BFB3D28A2746D00B7B442 /* ArticleTableViewCell.swift */; };
 		B08BFB4228A2762F00B7B442 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08BFB4128A2762F00B7B442 /* Article.swift */; };
 		B08BFB4428A297DC00B7B442 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08BFB4328A297DC00B7B442 /* NewsViewController.swift */; };
@@ -30,6 +31,7 @@
 		B01FFD72289E60440053C438 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B01FFD74289E60440053C438 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B01FFD7E289E77A60053C438 /* CryptoCoinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCoinTableViewCell.swift; sourceTree = "<group>"; };
+		B036A82D28A57183002C88E9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		B08BFB3D28A2746D00B7B442 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		B08BFB4128A2762F00B7B442 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		B08BFB4328A297DC00B7B442 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		B01FFD65289E60420053C438 /* CryptoVest */ = {
 			isa = PBXGroup;
 			children = (
+				B036A82C28A57169002C88E9 /* Extensions */,
 				B01FFD80289E7FEA0053C438 /* Models */,
 				B01FFD7A289E664B0053C438 /* Supporting Files */,
 				B01FFD7D289E67560053C438 /* Controllers */,
@@ -105,9 +108,8 @@
 		B01FFD7D289E67560053C438 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B08BFB4528A2987700B7B442 /* TableViewsCells */,
-				B01FFD6A289E60420053C438 /* CoinsViewController.swift */,
-				B08BFB4328A297DC00B7B442 /* NewsViewController.swift */,
+				B036A82B28A570C6002C88E9 /* News */,
+				B036A82A28A570BC002C88E9 /* Coins */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -121,13 +123,30 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		B08BFB4528A2987700B7B442 /* TableViewsCells */ = {
+		B036A82A28A570BC002C88E9 /* Coins */ = {
 			isa = PBXGroup;
 			children = (
+				B01FFD6A289E60420053C438 /* CoinsViewController.swift */,
 				B01FFD7E289E77A60053C438 /* CryptoCoinTableViewCell.swift */,
+			);
+			path = Coins;
+			sourceTree = "<group>";
+		};
+		B036A82B28A570C6002C88E9 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				B08BFB4328A297DC00B7B442 /* NewsViewController.swift */,
 				B08BFB3D28A2746D00B7B442 /* ArticleTableViewCell.swift */,
 			);
-			path = TableViewsCells;
+			path = News;
+			sourceTree = "<group>";
+		};
+		B036A82C28A57169002C88E9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B036A82D28A57183002C88E9 /* Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B08BFB4228A2762F00B7B442 /* Article.swift in Sources */,
+				B036A82E28A57183002C88E9 /* Extensions.swift in Sources */,
 				B01FFD6B289E60420053C438 /* CoinsViewController.swift in Sources */,
 				B01FFD7F289E77A60053C438 /* CryptoCoinTableViewCell.swift in Sources */,
 				B01FFD67289E60420053C438 /* AppDelegate.swift in Sources */,
