@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B00EE1EA28A6593000502F3F /* TopCoinsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00EE1E928A6593000502F3F /* TopCoinsTableViewCell.swift */; };
 		B01FFD67289E60420053C438 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FFD66289E60420053C438 /* AppDelegate.swift */; };
 		B01FFD69289E60420053C438 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FFD68289E60420053C438 /* SceneDelegate.swift */; };
 		B01FFD6B289E60420053C438 /* CoinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FFD6A289E60420053C438 /* CoinsViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B00EE1E928A6593000502F3F /* TopCoinsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCoinsTableViewCell.swift; sourceTree = "<group>"; };
 		B01FFD63289E60420053C438 /* CryptoVest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoVest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B01FFD66289E60420053C438 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B01FFD68289E60420053C438 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			children = (
 				B08BFB4328A297DC00B7B442 /* NewsViewController.swift */,
 				B08BFB3D28A2746D00B7B442 /* ArticleTableViewCell.swift */,
+				B00EE1E928A6593000502F3F /* TopCoinsTableViewCell.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				B036A82E28A57183002C88E9 /* Extensions.swift in Sources */,
 				B01FFD6B289E60420053C438 /* CoinsViewController.swift in Sources */,
 				B01FFD7F289E77A60053C438 /* CryptoCoinTableViewCell.swift in Sources */,
+				B00EE1EA28A6593000502F3F /* TopCoinsTableViewCell.swift in Sources */,
 				B01FFD67289E60420053C438 /* AppDelegate.swift in Sources */,
 				B0A83292289E807F006E438E /* Coin.swift in Sources */,
 				B08BFB3E28A2746D00B7B442 /* ArticleTableViewCell.swift in Sources */,
