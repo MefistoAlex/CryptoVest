@@ -19,17 +19,22 @@ final class CryptoCoinTableViewCell: UITableViewCell {
 
 extension CryptoCoinTableViewCell {
     func setCoin(coin: Coin) {
-        var arrowImage: UIImage
+        var arrowImage: UIImage?
         coinImage.image = UIImage(named: coin.coinID)
         coinIDLabel.text = coin.coinID
         coinName.text = coin.name
 
         if coin.change >= 0 {
-            changeView.setGradientBackground(colorTop: UIColor(named: "GreenFrom")!, colorBottom: UIColor(named: "GreenTo")!)
-            arrowImage = UIImage(named: "ArrowUp")!
+            changeView.setGradientBackground(
+                colorTop: UIColor(named: CustomColors.greenFrom.rawValue),
+                colorBottom: UIColor(named: CustomColors.greenTo.rawValue)
+            )
+            arrowImage = UIImage(named: CustomImages.arrowUp.rawValue)
         } else {
-            changeView.setGradientBackground(colorTop: UIColor(named: "RedFrom")!, colorBottom: UIColor(named: "RedTo")!)
-            arrowImage = UIImage(named: "ArrowDown")!
+            changeView.setGradientBackground(
+                colorTop: UIColor(named: CustomColors.redFrom.rawValue),
+                colorBottom: UIColor(named: CustomColors.redTo.rawValue))
+            arrowImage = UIImage(named: CustomImages.arrowDown.rawValue)
         }
 
         changeArrowImage.image = arrowImage

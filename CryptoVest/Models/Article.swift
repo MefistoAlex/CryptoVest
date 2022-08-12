@@ -15,6 +15,7 @@ struct Article {
 
 extension Article {
     var publicised: String {
+        //TODO: make correct calculating
         let seconds = abs(date.timeIntervalSinceNow)
 //        let compare = date.compare(Date.)
         // if time interval < 1 min
