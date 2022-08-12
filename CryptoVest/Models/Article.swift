@@ -15,10 +15,9 @@ struct Article {
 
 extension Article {
     var publicised: String {
-        //TODO: make correct calculating
-        let seconds = abs(date.timeIntervalSinceNow)
-//        let compare = date.compare(Date.)
-        // if time interval < 1 min
+        
+        let seconds = abs(Date().distance(to: date))
+       // if time interval < 1 min
         if seconds < 60 {
             return "just now"
         }
@@ -30,15 +29,18 @@ extension Article {
 
         // if time interval < 1 day
         if seconds < 60 * 60 * 24 {
-            return "\(Int(seconds / (60 * 24))) hours ago"
+            return "\(Int(seconds / (60 * 60))) hours ago"
         }
 
         // if time interval < 10 days
         if seconds < 60 * 60 * 24 * 10 {
-            return "\(Int(seconds / (60 * 24 * 10))) days ago"
+            return "\(Int(seconds / (60 * 60 * 24))) days ago"
         }
-
-        return date.description
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy.MM.dd"
+        
+        return dateFormatter.string(from: date)
     }
 
     static func getNews() -> [Article] {
@@ -48,7 +50,7 @@ extension Article {
             Article(
                 header: "Krypton Capital Founder Considers Legal Action Against Jamie Dimon",
                 authror: "Christine Masters",
-                date: dateFormatter.date(from: "2022-08-09 12:50:00")!,
+                date: dateFormatter.date(from: "2022-08-12 18:00:00")!,
                 image: "Article0"
             ),
             Article(
