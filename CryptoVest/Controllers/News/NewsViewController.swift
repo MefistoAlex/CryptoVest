@@ -16,23 +16,30 @@ final class NewsViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        
+    }
+    
+    override func viewDidLayoutSubviews() {
         setHeader()
+        tableView.reloadData()
     }
 }
 
 extension NewsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        articles.count
-        1
+        articles.count + 1
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleTableViewCell", for: indexPath) as! ArticleTableViewCell
-//        cell.setArticle(article: articles[indexPath.row])
-//        return cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TopCoinsTableViewCell", for: indexPath) as! TopCoinsTableViewCell
-        cell.setCoins(coins: coins)
-        return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TopCoinsTableViewCell", for: indexPath) as! TopCoinsTableViewCell
+            cell.setCoins(coins: coins)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleTableViewCell", for: indexPath) as! ArticleTableViewCell
+            cell.setArticle(article: articles[indexPath.row - 1] )
+            return cell
+        }
     }
 }
 
