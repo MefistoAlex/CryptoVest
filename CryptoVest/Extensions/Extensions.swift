@@ -46,7 +46,7 @@ extension UIView {
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.5)
         gradientLayer.frame = bounds
-        gradientLayer.frame.size.width += 5
+        gradientLayer.frame.size.width += 10
         let count = UInt32(layer.sublayers?.count ?? 0)
         layer.insertSublayer(gradientLayer, at: count - 1)
     }

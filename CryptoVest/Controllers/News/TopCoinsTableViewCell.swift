@@ -49,9 +49,10 @@ extension TopCoinsTableViewCell {
                     colorBottom: UIColor(named: CustomColors.redTo.rawValue))
                 arrowImage = UIImage(named: CustomImages.arrowDown.rawValue)
             }
-
+            changeViews[index].layer.cornerRadius =  changeViews[index].bounds.height / 2
+            changeViews[index].layer.masksToBounds = true
             arrows[index].image = arrowImage
-            changeValues[index].text = "\(abs(coins[index].change))%"
+            changeValues[index].text = " \(abs(coins[index].change))% "
 //            changeView.setCornerRadius()
 
             let formatter = NumberFormatter()
