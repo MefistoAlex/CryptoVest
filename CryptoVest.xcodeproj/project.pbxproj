@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B00EE1EA28A6593000502F3F /* TopCoinsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00EE1E928A6593000502F3F /* TopCoinsTableViewCell.swift */; };
+		B00EE1F228A6BFEF00502F3F /* ArticleTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B00EE1F128A6BFEF00502F3F /* ArticleTableViewHeader.xib */; };
+		B00EE1F428A6C09B00502F3F /* ArticleTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00EE1F328A6C09B00502F3F /* ArticleTableViewHeader.swift */; };
 		B01FFD67289E60420053C438 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FFD66289E60420053C438 /* AppDelegate.swift */; };
 		B01FFD69289E60420053C438 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FFD68289E60420053C438 /* SceneDelegate.swift */; };
 		B01FFD6B289E60420053C438 /* CoinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FFD6A289E60420053C438 /* CoinsViewController.swift */; };
@@ -24,6 +26,8 @@
 
 /* Begin PBXFileReference section */
 		B00EE1E928A6593000502F3F /* TopCoinsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCoinsTableViewCell.swift; sourceTree = "<group>"; };
+		B00EE1F128A6BFEF00502F3F /* ArticleTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewHeader.xib; sourceTree = "<group>"; };
+		B00EE1F328A6C09B00502F3F /* ArticleTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewHeader.swift; sourceTree = "<group>"; };
 		B01FFD63289E60420053C438 /* CryptoVest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoVest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B01FFD66289E60420053C438 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B01FFD68289E60420053C438 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 				B08BFB4328A297DC00B7B442 /* NewsViewController.swift */,
 				B08BFB3D28A2746D00B7B442 /* ArticleTableViewCell.swift */,
 				B00EE1E928A6593000502F3F /* TopCoinsTableViewCell.swift */,
+				B00EE1F128A6BFEF00502F3F /* ArticleTableViewHeader.xib */,
+				B00EE1F328A6C09B00502F3F /* ArticleTableViewHeader.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -213,6 +219,7 @@
 				B01FFD73289E60440053C438 /* LaunchScreen.storyboard in Resources */,
 				B01FFD70289E60440053C438 /* Assets.xcassets in Resources */,
 				B01FFD6E289E60420053C438 /* Main.storyboard in Resources */,
+				B00EE1F228A6BFEF00502F3F /* ArticleTableViewHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B00EE1F428A6C09B00502F3F /* ArticleTableViewHeader.swift in Sources */,
 				B08BFB4228A2762F00B7B442 /* Article.swift in Sources */,
 				B036A82E28A57183002C88E9 /* Extensions.swift in Sources */,
 				B01FFD6B289E60420053C438 /* CoinsViewController.swift in Sources */,
