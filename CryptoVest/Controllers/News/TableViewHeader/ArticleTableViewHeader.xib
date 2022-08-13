@@ -26,18 +26,19 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="460"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cFY-sI-Ic2">
-                    <rect key="frame" x="20" y="302" width="335" height="138"/>
+                    <rect key="frame" x="20" y="299" width="335" height="141"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Krypton Capital Founder Considers Legal Action Against Jamie Dimon" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wX-d6-gR1">
-                            <rect key="frame" x="0.0" y="0.0" width="319.5" height="107.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320.5" height="110.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" pointSize="30"/>
                             <color key="textColor" systemColor="systemGray5Color"/>
                             <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <size key="shadowOffset" width="0.0" height="2"/>
+                            <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <size key="shadowOffset" width="1" height="3"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="just now, by Christine Masters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSL-bE-LPx">
-                            <rect key="frame" x="0.0" y="117.5" width="227" height="20.5"/>
+                            <rect key="frame" x="0.0" y="120.5" width="227" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" systemColor="systemBackgroundColor"/>
                             <nil key="highlightedColor"/>
