@@ -16,18 +16,18 @@ final class NewsViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        setHeader()
         
     }
-    
-    override func viewDidLayoutSubviews() {
-        setHeader()
-        tableView.reloadData()
-    }
+  
 }
 
 extension NewsViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        0.66 * view.bounds.height
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        articles.count + 1
+        articles.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,7 +37,7 @@ extension NewsViewController: UITableViewDataSource {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleTableViewCell", for: indexPath) as! ArticleTableViewCell
-            cell.setArticle(article: articles[indexPath.row - 1] )
+            cell.setArticle(article: articles[indexPath.row] )
             return cell
         }
     }
@@ -46,5 +46,10 @@ extension NewsViewController: UITableViewDataSource {
 extension NewsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = ArticleTableViewHeader()
+        headerView.setArticle(article: articles[0])
+        return headerView
     }
 }

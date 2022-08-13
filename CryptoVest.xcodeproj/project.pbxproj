@@ -142,10 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				B08BFB4328A297DC00B7B442 /* NewsViewController.swift */,
-				B08BFB3D28A2746D00B7B442 /* ArticleTableViewCell.swift */,
-				B00EE1E928A6593000502F3F /* TopCoinsTableViewCell.swift */,
-				B00EE1F128A6BFEF00502F3F /* ArticleTableViewHeader.xib */,
-				B00EE1F328A6C09B00502F3F /* ArticleTableViewHeader.swift */,
+				B07FF65228A77C3700004160 /* TableViewCells */,
+				B07FF65328A77C7200004160 /* TableViewHeader */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -156,6 +154,24 @@
 				B036A82D28A57183002C88E9 /* Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B07FF65228A77C3700004160 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				B08BFB3D28A2746D00B7B442 /* ArticleTableViewCell.swift */,
+				B00EE1E928A6593000502F3F /* TopCoinsTableViewCell.swift */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		B07FF65328A77C7200004160 /* TableViewHeader */ = {
+			isa = PBXGroup;
+			children = (
+				B00EE1F128A6BFEF00502F3F /* ArticleTableViewHeader.xib */,
+				B00EE1F328A6C09B00502F3F /* ArticleTableViewHeader.swift */,
+			);
+			path = TableViewHeader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
