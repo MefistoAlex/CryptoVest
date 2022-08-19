@@ -17,6 +17,7 @@ final class NewsViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         setHeader()
+       
         
     }
   
