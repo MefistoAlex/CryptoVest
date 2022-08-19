@@ -15,9 +15,8 @@ struct Article {
 
 extension Article {
     var publicised: String {
-        
         let seconds = abs(Date().distance(to: date))
-       // if time interval < 1 min
+        // if time interval < 1 min
         if seconds < 60 {
             return "just now"
         }
@@ -36,10 +35,10 @@ extension Article {
         if seconds < 60 * 60 * 24 * 10 {
             return "\(Int(seconds / (60 * 60 * 24))) days ago"
         }
-        
+
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy.MM.dd"
-        
+
         return dateFormatter.string(from: date)
     }
 

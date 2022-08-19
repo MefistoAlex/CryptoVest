@@ -38,8 +38,8 @@ extension UIViewController {
 }
 
 extension UIView {
-    //TODO: fix gradient Bug
-    
+    // TODO: fix gradient Bug
+
     func setGradientBackground(colorTop: UIColor?, colorBottom: UIColor?) {
         guard let colorTop = colorTop, let colorBottom = colorBottom else { return }
 

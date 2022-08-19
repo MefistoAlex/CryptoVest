@@ -21,7 +21,8 @@ enum CoinsPaths {
             return "https://pro-api.coinmarketcap.com/v2/cryptocurrency/info"
         }
     }
-    static var headers: [String : String] {
-        return ["X-CMC_PRO_API_KEY" : "aba11fc0-6b34-41d5-ad50-602fabe047d5"]
+
+    static var headers: [String: String] {
+        return ["X-CMC_PRO_API_KEY": "aba11fc0-6b34-41d5-ad50-602fabe047d5"]
     }
 }

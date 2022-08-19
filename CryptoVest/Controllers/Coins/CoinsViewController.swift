@@ -12,13 +12,14 @@ final class CoinsViewController: UIViewController {
     private lazy var coinService: CoinAPIServiceInterface = {
         CoinAPIService()
     }()
+
     @IBOutlet private var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        coinService.getCoins(path: .latests) { responce, error in
+        coinService.getCoins(path: .latests) { responce, _ in
             if let coins = responce?.data {
                 self.coins = coins
                 self.tableView.reloadData()

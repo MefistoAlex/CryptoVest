@@ -38,7 +38,7 @@ extension CryptoCoinTableViewCell {
         }
 
         changeArrowImage.image = arrowImage
-       
+
         changeLabel.text = String(format: "%.2f", abs(coin.change)) + "%"
         changeView.setCornerRadius()
 
@@ -47,7 +47,13 @@ extension CryptoCoinTableViewCell {
         formatter.maximumFractionDigits = 2
         formatter.currencyDecimalSeparator = ","
 
-        priceLabel.text = "$" + formatter.string(from: NSNumber(value: coin.price))!
+        if coin.price > 1 {
+            priceLabel.text = "$ \(String(format: "%.2f", coin.price))"
+        } else if coin.price > 0.001 {
+            priceLabel.text = "$ \(String(format: "%.3f", coin.price))"
+        } else {
+            priceLabel.text = "$ \(String(format: "%.5f", coin.price))"
+        }
     }
 }
 

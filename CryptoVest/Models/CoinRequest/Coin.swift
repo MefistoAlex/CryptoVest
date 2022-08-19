@@ -23,4 +23,3 @@ struct Coin: Codable {
         case quote
     }
 }
-

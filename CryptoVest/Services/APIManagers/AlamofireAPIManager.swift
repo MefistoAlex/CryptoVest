@@ -11,16 +11,16 @@ final class AlamofireAPIManager: APIManager {
     func request<T>(urlString: String,
                     method: HttpMethod,
                     dataType: T.Type,
-                    headers: [String : String]?,
+                    headers: [String: String]?,
+                    parameters: Parameters?,
                     completion: @escaping (T?, Error?) -> Void) where T: Decodable {
-        
         var httpHeaders: HTTPHeaders?
         if let headers = headers {
             httpHeaders = HTTPHeaders(headers)
         }
-        
+
         AF.request(urlString, method: HTTPMethod(rawValue: method.rawValue),
-//                   parameters: <#T##Encodable?#>,
+                   parameters: parameters,
 //                   encoder: <#T##ParameterEncoder#>,
                    headers: httpHeaders)
             .validate()
