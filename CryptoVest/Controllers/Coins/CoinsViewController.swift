@@ -8,14 +8,22 @@
 import UIKit
 
 final class CoinsViewController: UIViewController {
-    private var coins = Coin.getCoins()
-
+    private var coins: [Coin] = []
+    private lazy var coinService: CoinAPIServiceInterface = {
+        CoinAPIService()
+    }()
     @IBOutlet private var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        coinService.getCoins { responce, error in
+            if let coins = responce?.data {
+                self.coins = coins
+                self.tableView.reloadData()
+            }
+        }
         setHeader()
     }
 }
