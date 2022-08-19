@@ -8,7 +8,7 @@
 import UIKit
 
 final class NewsViewController: UIViewController {
-    private let coins = Coin.getCoins()
+    private let coins:[Coin] = []
     private let articles = Article.getNews()
     @IBOutlet var tableView: UITableView!
 
