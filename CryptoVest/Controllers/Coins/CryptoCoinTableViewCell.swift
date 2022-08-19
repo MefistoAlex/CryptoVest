@@ -38,7 +38,8 @@ extension CryptoCoinTableViewCell {
         }
 
         changeArrowImage.image = arrowImage
-        changeLabel.text = "\(abs(coin.change))%"
+       
+        changeLabel.text = String(format: "%.2f", abs(coin.change)) + "%"
         changeView.setCornerRadius()
 
         let formatter = NumberFormatter()
