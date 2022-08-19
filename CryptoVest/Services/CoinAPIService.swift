@@ -7,7 +7,7 @@
 
 import Foundation
 protocol CoinAPIServiceInterface {
-    func getCoins(completion: @escaping (_ responce: CoinRequestResponce?, _ error: Error?) -> Void)
+    func getCoins(path: CoinsPaths, completion: @escaping (_ responce: CoinRequestResponce?, _ error: Error?) -> Void)
 }
 
 final class CoinAPIService: CoinAPIServiceInterface {
@@ -17,10 +17,11 @@ final class CoinAPIService: CoinAPIServiceInterface {
         apiManager = AlamofireAPIManager()
     }
 
-    func getCoins(completion: @escaping (CoinRequestResponce?, Error?) -> Void) {
-        apiManager.request(urlString: "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest",
+    func getCoins(path: CoinsPaths, completion: @escaping (CoinRequestResponce?, Error?) -> Void) {
+        apiManager.request(urlString: path.url,
                            method: .get,
-                           dataType: CoinRequestResponce.self) { data, error in
+                           dataType: CoinRequestResponce.self,
+                           headers: CoinsPaths.headers) { data, error in
             completion(data, error)
         }
     }
