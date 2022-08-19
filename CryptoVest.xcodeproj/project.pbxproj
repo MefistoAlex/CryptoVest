@@ -28,6 +28,8 @@
 		B08BFB4428A297DC00B7B442 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08BFB4328A297DC00B7B442 /* NewsViewController.swift */; };
 		B0A83292289E807F006E438E /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A83291289E807F006E438E /* Coin.swift */; };
 		B0D8B94728AFD75C00AEB58F /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D8B94628AFD75C00AEB58F /* Quote.swift */; };
+		B0D8B94928AFDA7000AEB58F /* CoinsPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D8B94828AFDA7000AEB58F /* CoinsPaths.swift */; };
+		B0D8B94C28AFE82400AEB58F /* CoinRequestParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D8B94B28AFE82400AEB58F /* CoinRequestParameters.swift */; };
 		B0ED88F428ACE19100765162 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = B0ED88F328ACE19100765162 /* Alamofire */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,8 @@
 		B08BFB4328A297DC00B7B442 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		B0A83291289E807F006E438E /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		B0D8B94628AFD75C00AEB58F /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		B0D8B94828AFDA7000AEB58F /* CoinsPaths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsPaths.swift; sourceTree = "<group>"; };
+		B0D8B94B28AFE82400AEB58F /* CoinRequestParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRequestParameters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,9 +178,9 @@
 		B063F4D228AF7C0400E223A8 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				B063F4D328AF7C2400E223A8 /* APIManager.swift */,
-				B063F4D528AF7D9D00E223A8 /* AlamofireAPIManager.swift */,
+				B0D8B94A28AFE7C800AEB58F /* APIManagers */,
 				B063F4D728AF83B700E223A8 /* CoinAPIService.swift */,
+				B0D8B94828AFDA7000AEB58F /* CoinsPaths.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -188,6 +192,7 @@
 				B0D8B94628AFD75C00AEB58F /* Quote.swift */,
 				B063F4D928AF891900E223A8 /* CoinRequestResponce.swift */,
 				B063F4DB28AF8A7B00E223A8 /* CoinResponceStatus.swift */,
+				B0D8B94B28AFE82400AEB58F /* CoinRequestParameters.swift */,
 			);
 			path = CoinRequest;
 			sourceTree = "<group>";
@@ -208,6 +213,15 @@
 				B00EE1F328A6C09B00502F3F /* ArticleTableViewHeader.swift */,
 			);
 			path = TableViewHeader;
+			sourceTree = "<group>";
+		};
+		B0D8B94A28AFE7C800AEB58F /* APIManagers */ = {
+			isa = PBXGroup;
+			children = (
+				B063F4D328AF7C2400E223A8 /* APIManager.swift */,
+				B063F4D528AF7D9D00E223A8 /* AlamofireAPIManager.swift */,
+			);
+			path = APIManagers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +314,8 @@
 				B00EE1EA28A6593000502F3F /* TopCoinsTableViewCell.swift in Sources */,
 				B01FFD67289E60420053C438 /* AppDelegate.swift in Sources */,
 				B0D8B94728AFD75C00AEB58F /* Quote.swift in Sources */,
+				B0D8B94928AFDA7000AEB58F /* CoinsPaths.swift in Sources */,
+				B0D8B94C28AFE82400AEB58F /* CoinRequestParameters.swift in Sources */,
 				B0A83292289E807F006E438E /* Coin.swift in Sources */,
 				B08BFB3E28A2746D00B7B442 /* ArticleTableViewCell.swift in Sources */,
 				B063F4D428AF7C2400E223A8 /* APIManager.swift in Sources */,
