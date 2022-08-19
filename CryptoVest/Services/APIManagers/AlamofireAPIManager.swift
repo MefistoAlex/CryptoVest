@@ -11,16 +11,18 @@ final class AlamofireAPIManager: APIManager {
     func request<T>(urlString: String,
                     method: HttpMethod,
                     dataType: T.Type,
+                    headers: [String : String]?,
                     completion: @escaping (T?, Error?) -> Void) where T: Decodable {
-        let httpHeader = HTTPHeader(
-            name: "X-CMC_PRO_API_KEY",
-            value: "aba11fc0-6b34-41d5-ad50-602fabe047d5"
-        )
-
+        
+        var httpHeaders: HTTPHeaders?
+        if let headers = headers {
+            httpHeaders = HTTPHeaders(headers)
+        }
+        
         AF.request(urlString, method: HTTPMethod(rawValue: method.rawValue),
 //                   parameters: <#T##Encodable?#>,
 //                   encoder: <#T##ParameterEncoder#>,
-                   headers: HTTPHeaders([httpHeader]))
+                   headers: httpHeaders)
             .validate()
             .responseDecodable(of: T.self) { response in
                 completion(response.value, response.error)

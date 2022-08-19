@@ -14,5 +14,6 @@ protocol APIManager {
     func request<T>(urlString: String,
                     method: HttpMethod,
                     dataType: T.Type,
+                    headers: [String : String]?,
                     completion: @escaping (_ data: T?, _ error: Error?) -> Void) where T: Decodable
 }
