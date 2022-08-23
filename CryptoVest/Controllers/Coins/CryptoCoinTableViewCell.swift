@@ -23,8 +23,7 @@ extension CryptoCoinTableViewCell {
         var arrowImage: UIImage?
 
         if let logoURL = coin.logo {
-            coinImage.sd_setImage(with: URL(string: logoURL),
-                                  placeholderImage: UIImage(named: "indicator"))
+            coinImage.sd_setImage(with: URL(string: logoURL))
         }
 
         coinIDLabel.text = coin.symbol
