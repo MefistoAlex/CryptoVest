@@ -9,21 +9,37 @@ import UIKit
 
 final class CoinsViewController: UIViewController {
     private var coins: [Coin] = []
+    private var isLoading: Bool = false {
+        didSet {
+            if isLoading {
+   
+                loadingIndicator.startAnimating()
+                loadingIndicator.hidesWhenStopped = true
+            } else {
+                loadingIndicator.stopAnimating()
+            }
+        }
+    }
+
     private lazy var coinService: CoinAPIServiceInterface = {
         CoinAPIService()
     }()
 
+    @IBOutlet var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet private var tableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.addSubview(loadingIndicator)
         tableView.delegate = self
         tableView.dataSource = self
+        isLoading = true
         coinService.getCoins(path: .latests) { coins, _ in
             if let coins = coins {
                 self.coins = coins
                 self.tableView.reloadData()
             }
+            self.isLoading = false
         }
         setHeader()
     }
