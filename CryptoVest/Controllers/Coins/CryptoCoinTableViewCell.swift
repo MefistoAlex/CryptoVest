@@ -5,6 +5,7 @@
 //  Created by Alexandr Mefisto on 06.08.2022.
 //
 
+import SDWebImage
 import UIKit
 
 final class CryptoCoinTableViewCell: UITableViewCell {
@@ -20,8 +21,13 @@ final class CryptoCoinTableViewCell: UITableViewCell {
 extension CryptoCoinTableViewCell {
     func setCoin(coin: Coin) {
         var arrowImage: UIImage?
-        coinImage.image = UIImage(named: coin.coinID)
-        coinIDLabel.text = coin.coinID
+
+        if let logoURL = coin.logo {
+            coinImage.sd_setImage(with: URL(string: logoURL),
+                                  placeholderImage: UIImage(named: "indicator"))
+        }
+
+        coinIDLabel.text = coin.symbol
         coinName.text = coin.name
 
         if coin.change >= 0 {
