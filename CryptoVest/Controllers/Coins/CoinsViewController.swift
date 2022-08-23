@@ -19,8 +19,8 @@ final class CoinsViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        coinService.getCoins(path: .latests) { responce, _ in
-            if let coins = responce?.data {
+        coinService.getCoins(path: .latests) { coins, _ in
+            if let coins = coins {
                 self.coins = coins
                 self.tableView.reloadData()
             }
