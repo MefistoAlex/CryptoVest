@@ -33,7 +33,7 @@ extension TopCoinsTableViewCell {
         coinsCount = coins.count <= coinsCount ? coins.count : coinsCount
 
         for index in 0 ..< coinsCount {
-            coinsIDs[index].text = coins[index].coinID
+            coinsIDs[index].text = coins[index].symbol
 
             if coins[index].change >= 0 {
                 changeViews[index].setGradientBackground(
