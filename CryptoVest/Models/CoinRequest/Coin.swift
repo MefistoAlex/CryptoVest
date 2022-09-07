@@ -11,6 +11,12 @@ struct Coin: Codable {
     let quote: [String: Quote]
     var logo: String?
 
+    var isFavourite: Bool?
+
+    var isFavouriteNonOptional: Bool {
+        isFavourite ?? false
+    }
+
     var price: Double {
         quote.first?.value.price ?? 0
     }
