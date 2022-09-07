@@ -98,11 +98,21 @@
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="L5f-sw-s43">
+                                                    <rect key="frame" x="389" y="4.5" width="20" height="20"/>
+                                                    <color key="tintColor" systemColor="systemYellowColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="Vve-I9-nhX"/>
+                                                        <constraint firstAttribute="width" constant="20" id="fjq-G4-ezw"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="8eK-0B-6ei" firstAttribute="top" secondItem="998-M3-jfN" secondAttribute="top" constant="20" id="J14-qt-JFm"/>
                                                 <constraint firstAttribute="trailing" secondItem="8eK-0B-6ei" secondAttribute="trailing" constant="20" id="aWX-Fk-HMa"/>
                                                 <constraint firstAttribute="bottom" secondItem="8eK-0B-6ei" secondAttribute="bottom" constant="20" id="gnh-PF-J81"/>
+                                                <constraint firstItem="L5f-sw-s43" firstAttribute="top" secondItem="998-M3-jfN" secondAttribute="top" constant="5" id="lIM-vq-N1e"/>
+                                                <constraint firstAttribute="trailing" secondItem="L5f-sw-s43" secondAttribute="trailing" constant="5" id="wDk-Ye-xdV"/>
                                                 <constraint firstItem="8eK-0B-6ei" firstAttribute="leading" secondItem="998-M3-jfN" secondAttribute="leading" constant="20" id="z0p-Fc-ZcK"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -113,6 +123,7 @@
                                             <outlet property="coinIDLabel" destination="Ube-41-PEq" id="MJO-cz-Kqi"/>
                                             <outlet property="coinImage" destination="KeB-SX-XOc" id="2bw-Nq-vPA"/>
                                             <outlet property="coinName" destination="YTx-Vf-s7S" id="oyZ-gS-smC"/>
+                                            <outlet property="isFauvoriteImageView" destination="L5f-sw-s43" id="P4q-o2-nBd"/>
                                             <outlet property="priceLabel" destination="iDG-3d-n2Z" id="7Xj-Yb-elo"/>
                                         </connections>
                                     </tableViewCell>
@@ -392,7 +403,7 @@
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" translatesAutoresizingMaskIntoConstraints="NO" id="VGc-8a-wF5">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="VGc-8a-wF5">
                                                             <rect key="frame" x="254" y="0.0" width="120" height="90"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="120" id="1Na-s5-c09"/>
@@ -490,6 +501,8 @@
         <image name="arrow.up" catalog="system" width="120" height="128"/>
         <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="menu" width="22" height="12"/>
+        <image name="star" width="128" height="128"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <namedColor name="AccentColor">
             <color red="0.92199999094009399" green="0.53700000047683716" blue="0.36100000143051147" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
@@ -498,6 +511,9 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
