@@ -16,6 +16,7 @@ final class CryptoCoinTableViewCell: UITableViewCell {
     @IBOutlet private var changeLabel: UILabel!
     @IBOutlet private var changeArrowImage: UIImageView!
     @IBOutlet private var priceLabel: UILabel!
+    @IBOutlet var isFauvoriteImageView: UIImageView!
 }
 
 extension CryptoCoinTableViewCell {
@@ -59,6 +60,7 @@ extension CryptoCoinTableViewCell {
         } else {
             priceLabel.text = "$ \(String(format: "%.5f", coin.price))"
         }
+        isFauvoriteImageView.isHidden = !coin.isFavouriteNonOptional
     }
 }
 
