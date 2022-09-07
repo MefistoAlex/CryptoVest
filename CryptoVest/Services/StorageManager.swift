@@ -10,4 +10,3 @@ protocol StorageManager {
     func setFavouriteCoins(coinsIdSet: Set<Int>)
     func getFavouriteCoins() -> Set<Int>
 }
-
