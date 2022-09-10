@@ -18,7 +18,7 @@ final class AlamofireAPIManager: APIManager {
         if let headers = headers {
             httpHeaders = HTTPHeaders(headers)
         }
-
+        
         AF.request(urlString, method: HTTPMethod(rawValue: method.rawValue),
                    parameters: parameters,
 //                   encoder: <#T##ParameterEncoder#>,
