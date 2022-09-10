@@ -8,5 +8,7 @@
 import Foundation
 protocol StorageManager {
     func setFavouriteCoins(coinsIdSet: Set<Int>)
+    func saveCoin(coin: Coin)
+    func removeCoin(coin: Coin)
     func getFavouriteCoins() -> Set<Int>
 }
