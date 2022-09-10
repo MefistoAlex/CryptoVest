@@ -15,7 +15,7 @@ class ArticleTableViewCell: UITableViewCell {
 
 extension ArticleTableViewCell {
     func setArticle(article: Article) {
-        articleHeader.text = article.header
+        articleHeader.text = article.title
         authorAndDate.text = "\(article.authror), \(article.publicised)"
         articleImage.image = UIImage(named: article.image)
         articleImage.layer.cornerRadius = articleImage.frame.height * 0.025

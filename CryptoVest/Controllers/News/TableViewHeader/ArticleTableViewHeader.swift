@@ -33,7 +33,7 @@ class ArticleTableViewHeader: UIView {
     }
     func setArticle(article: Article) {
         
-        articleHeaderLabel.text = article.header
+        articleHeaderLabel.text = article.title
         authorLabel.text = "\(article.authror), \(article.publicised)"
         articleImageView.image = UIImage(named: article.image)
     }
