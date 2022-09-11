@@ -8,33 +8,19 @@
 import Foundation
 struct Article: Decodable {
     let title: String
-    let link: String
-    let sourse_id: String?
-    let keywords: [String]?
-    let creator: [String]?
-    let image_url: String?
-    let video_url: String?
-    let description: String?
-    let pubDate: String?
-    let content: String?
-    
-    
-    var authror: String {
-        return " "
-    }
+    let url: String
+    let urlToImage: String?
+    let description: String
+    let publishedAt: String?
+    let content: String
+    var author: String?
+
     var date: Date {
-        Date()
+        guard let pubDate = publishedAt else { return Date() }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-ddTHH:mm:ssZ"
+        return dateFormatter.date(from: pubDate) ?? Date()
     }
-    var image: String {
-        " "
-    }
-    
-//    enum CodingKeys: String, CodingKey {
-//        case header = "title"
-//        case authror = String
-//        case date = Date
-//        case image = String
-//    }
 }
 
 extension Article {
@@ -64,60 +50,5 @@ extension Article {
         dateFormatter.dateFormat = "yyyy.MM.dd"
 
         return dateFormatter.string(from: date)
-    }
-
-    static func getNews() -> [Article] {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        return [
-//            Article(
-//                header: "Krypton Capital Founder Considers Legal Action Against Jamie Dimon",
-//                authror: "Christine Masters",
-//                date: dateFormatter.date(from: "2022-08-12 18:00:00")!,
-//                image: "Article0"
-//            ),
-//            Article(
-//                header: "British Cryptocurrency Electroneum Suffers Cyber Attack Locking Out Investors",
-//                authror: "C. Masters",
-//                date: dateFormatter.date(from: "2022-08-06 12:50:00")!,
-//                image: "Article1"
-//            ),
-//            Article(
-//                header: "To Regulate or Not? Securities Commission in Malaysia Talk Up Cryptocurrency Framework",
-//                authror: "A. Antonovici",
-//                date: dateFormatter.date(from: "2022-08-05 12:50:00")!,
-//                image: "Article2"
-//            ),
-//            Article(
-//                header: "Kik Chat ICO Draws Top VCs; We Carefully Review Why...",
-//                authror: "H. Naseer",
-//                date: dateFormatter.date(from: "2022-08-04 12:50:00")!,
-//                image: "Article3"
-//            ),
-//            Article(
-//                header: "Deloitte Lists Key Principles for Blockchain Adoption in Financial Sector",
-//                authror: "T. DeSue",
-//                date: dateFormatter.date(from: "2022-08-03 12:50:00")!,
-//                image: "Article4"
-//            ),
-//            Article(
-//                header: "Wharton MBA: Blockchain Course Set for Spring 2018",
-//                authror: "M. Gomez",
-//                date: dateFormatter.date(from: "2022-08-02 12:50:00")!,
-//                image: "Article5"
-//            ),
-//            Article(
-//                header: "China Crypto Ban Continues to Boost Bitcoin OTC Market Activity",
-//                authror: "C. Masters",
-//                date: dateFormatter.date(from: "2022-08-02 12:50:00")!,
-//                image: "Article6"
-//            ),
-//            Article(
-//                header: "Vatican in Discussions to Address Crypto Use in Human Trafficking",
-//                authror: "H. Nasser",
-//                date: dateFormatter.date(from: "2022-08-02 12:50:00")!,
-//                image: "Article7"
-//            ),
-        ]
     }
 }
