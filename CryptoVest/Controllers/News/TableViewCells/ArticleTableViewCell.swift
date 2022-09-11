@@ -5,6 +5,7 @@
 //  Created by Alexandr Mefisto on 09.08.2022.
 //
 
+import SDWebImage
 import UIKit
 
 class ArticleTableViewCell: UITableViewCell {
@@ -16,8 +17,12 @@ class ArticleTableViewCell: UITableViewCell {
 extension ArticleTableViewCell {
     func setArticle(article: Article) {
         articleHeader.text = article.title
-        authorAndDate.text = "\(article.authror), \(article.publicised)"
-        articleImage.image = UIImage(named: article.image)
+        authorAndDate.text = "\(article.author ?? "") \(article.publicised)"
+
+        if let imageUrl = article.urlToImage {
+            articleImage.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(named: "welcome screen"))
+        }
+
         articleImage.layer.cornerRadius = articleImage.frame.height * 0.025
     }
 }
