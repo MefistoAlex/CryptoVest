@@ -32,13 +32,15 @@ final class NewsViewController: UIViewController {
         NewsAPIService()
     }()
 
+    // MARK: Lyfecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.addSubview(loadingIndicator)
         isLoading = true
-        setHeader()
+
         coinService.getCoins(path: .latests) { coins, _ in
             if let coins = coins {
                 self.coins = coins
@@ -56,8 +58,12 @@ final class NewsViewController: UIViewController {
                 }
             }
         }
+
+        setHeader()
     }
 }
+
+// MARK: Table View data sourse
 
 extension NewsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -80,6 +86,8 @@ extension NewsViewController: UITableViewDataSource {
         }
     }
 }
+
+// MARK: Table View delegate
 
 extension NewsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
