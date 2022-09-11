@@ -11,7 +11,7 @@ import UIKit
 final class CoinsViewController: UIViewController {
     private var coins: [Coin] = []
     private var favouritesCoinsId = Set<Int>()
-    
+
     private var isLoading: Bool = false {
         didSet {
             if isLoading {
@@ -22,12 +22,14 @@ final class CoinsViewController: UIViewController {
             }
         }
     }
+
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.accessibilityViewIsModal = true
         refreshControl.addTarget(self, action: #selector(self.refreshTableData), for: .valueChanged)
         return refreshControl
     }()
+
     private lazy var coinService: CoinAPIServiceInterface = {
         CoinAPIService()
     }()
@@ -45,10 +47,10 @@ final class CoinsViewController: UIViewController {
         super.viewDidLoad()
         tableView.addSubview(loadingIndicator)
         tableView.addSubview(refreshControl)
-        
+
         tableView.delegate = self
         tableView.dataSource = self
-        
+
         isLoading = true
         refreshTableData()
         setHeader()
@@ -69,8 +71,8 @@ final class CoinsViewController: UIViewController {
         tableView.reloadRows(at: [IndexPath(row: coinIndex, section: 0)], with: .fade)
         storageManager.setFavouriteCoins(coinsIdSet: favouritesCoinsId)
     }
+
     @objc private func refreshTableData() {
-        
         coinService.getCoins(path: .latests) { coins, _ in
             if let coins = coins {
                 self.favouritesCoinsId = self.storageManager.getFavouriteCoins()
@@ -78,15 +80,14 @@ final class CoinsViewController: UIViewController {
                 for index in 0 ..< coins.count {
                     self.coins[index].isFavourite = self.favouritesCoinsId.contains(self.coins[index].id)
                 }
-                self.coins.sort { lhCoin, rhCoin in
-                    return lhCoin.isFavouriteNonOptional
+                self.coins.sort { lhCoin, _ in
+                    lhCoin.isFavouriteNonOptional
                 }
                 self.tableView.reloadData()
             }
             self.isLoading = false
             self.refreshControl.endRefreshing()
         }
-       
     }
 }
 
@@ -115,16 +116,11 @@ extension CoinsViewController: UITableViewDelegate {
         )?.withTintColor(.yellow, renderingMode: .alwaysTemplate)
         return UISwipeActionsConfiguration(actions: [favouriteAction])
     }
-    func tableView(_ tableView: UITableView, didUpdateFocusIn context: UITableViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
-        print("some")
-    }
-    
 }
 
 // MARK: Table View data source
 
 extension CoinsViewController: UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         coins.count
     }
