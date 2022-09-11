@@ -50,7 +50,7 @@ extension TopCoinsTableViewCell {
             changeViews[index].layer.cornerRadius = changeViews[index].bounds.height / 2
             changeViews[index].layer.masksToBounds = true
             arrows[index].image = arrowImage
-            changeValues[index].text = " \(abs(coins[index].change)) %"
+            changeValues[index].text = " " + String(format: "%.2f", abs(coins[index].change)) + "%  "
 
             let formatter = NumberFormatter()
             formatter.numberStyle = .decimal
