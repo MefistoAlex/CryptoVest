@@ -7,22 +7,18 @@
 
 import Foundation
 enum NewsPaths {
-    case crypto, news
+    case news
 
     var url: String {
         switch self {
-        case .crypto:
-            return "https://newsdata.io/api/1/crypto"
         case .news:
-            return "https://newsdata.io/api/1/news"
+            return "https://newsapi.org/v2/everything"
         }
     }
 
     static var headers: [String: String] {
-        return ["X-ACCESS-KEY": "pub_11088faea4a04046ba3c3c3ec227560da8353"]
+        return ["X-Api-Key": "03ab902f6f0e4fddb155f62a4fe2de1f"]
     }
-    
-    static var apiKey: String {
-        "pub_11088faea4a04046ba3c3c3ec227560da8353"
-    }
+    //MARK: Docs
+    //https://newsapi.org/docs
 }
