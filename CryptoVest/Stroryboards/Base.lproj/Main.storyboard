@@ -186,6 +186,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="XCg-Gf-OtK">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                            </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Lpa-eW-6ZY">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -432,10 +435,14 @@
                         <viewLayoutGuide key="safeArea" id="GS8-Kb-ZHg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="GS8-Kb-ZHg" firstAttribute="bottom" secondItem="XCg-Gf-OtK" secondAttribute="bottom" id="No8-Hk-2x9"/>
                             <constraint firstItem="GS8-Kb-ZHg" firstAttribute="trailing" secondItem="Lpa-eW-6ZY" secondAttribute="trailing" id="SSg-Yv-mO1"/>
+                            <constraint firstItem="XCg-Gf-OtK" firstAttribute="top" secondItem="GS8-Kb-ZHg" secondAttribute="top" id="YvQ-XX-EME"/>
                             <constraint firstItem="Lpa-eW-6ZY" firstAttribute="leading" secondItem="GS8-Kb-ZHg" secondAttribute="leading" id="d2s-X2-cwY"/>
                             <constraint firstItem="GS8-Kb-ZHg" firstAttribute="bottom" secondItem="Lpa-eW-6ZY" secondAttribute="bottom" id="eJt-0N-ks5"/>
                             <constraint firstItem="Lpa-eW-6ZY" firstAttribute="top" secondItem="GS8-Kb-ZHg" secondAttribute="top" id="j9w-L8-mdt"/>
+                            <constraint firstItem="GS8-Kb-ZHg" firstAttribute="trailing" secondItem="XCg-Gf-OtK" secondAttribute="trailing" id="mQd-bw-bUT"/>
+                            <constraint firstItem="XCg-Gf-OtK" firstAttribute="leading" secondItem="GS8-Kb-ZHg" secondAttribute="leading" id="wWL-RO-Lcf"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="News" image="NewsImage" id="vOD-fh-rz5">
@@ -450,6 +457,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="loadingIndicator" destination="XCg-Gf-OtK" id="8wy-HL-zLR"/>
                         <outlet property="tableView" destination="Lpa-eW-6ZY" id="zZa-fO-MzQ"/>
                     </connections>
                 </viewController>

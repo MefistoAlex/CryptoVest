@@ -10,7 +10,19 @@ import UIKit
 final class NewsViewController: UIViewController {
     private var coins: [Coin] = []
     private var articles: [Article] = []
-    @IBOutlet var tableView: UITableView!
+    private var isLoading: Bool = true {
+        didSet {
+            if isLoading {
+                loadingIndicator.startAnimating()
+                loadingIndicator.hidesWhenStopped = true
+            } else {
+                loadingIndicator.stopAnimating()
+            }
+        }
+    }
+
+    @IBOutlet private var tableView: UITableView!
+    @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
 
     private lazy var coinService: CoinAPIServiceInterface = {
         CoinAPIService()
@@ -24,21 +36,24 @@ final class NewsViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.addSubview(loadingIndicator)
+        isLoading = true
         setHeader()
         coinService.getCoins(path: .latests) { coins, _ in
             if let coins = coins {
                 self.coins = coins
             }
-        }
-        newsService.getNews { articles, _ in
-            if let articles = articles {
-                self.articles = articles
-            }
-            self.coinService.getCoins(path: .latests) { coins, _ in
-                if let coins = coins {
-                    self.coins = coins
+            self.newsService.getNews { articles, _ in
+                if let articles = articles {
+                    self.articles = articles
                 }
-                self.tableView.reloadData()
+                self.coinService.getCoins(path: .latests) { coins, _ in
+                    if let coins = coins {
+                        self.coins = coins
+                    }
+                    self.tableView.reloadData()
+                    self.isLoading = false
+                }
             }
         }
     }
@@ -72,10 +87,14 @@ extension NewsViewController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = ArticleTableViewHeader()
-        if articles.count > 0 {
-            headerView.setArticle(article: articles[0])
+        if isLoading {
+            return UIView()
+        } else {
+            let headerView = ArticleTableViewHeader()
+            if articles.count > 0 {
+                headerView.setArticle(article: articles[0])
+            }
+            return headerView
         }
-        return headerView
     }
 }
