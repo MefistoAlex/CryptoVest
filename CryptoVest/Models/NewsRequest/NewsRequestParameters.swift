@@ -7,25 +7,24 @@
 
 import Foundation
 struct NewsRequestParameters {
-    
-    let apikey:String = NewsPaths.apiKey
-    var language: String = "en"
-    var request: String? = nil
-    
+    let request: String = "crypto cryptocurrency"
+    let language: String = "en"
+    let pageSize: Int = 20
+    var page: Int = 1
+
     var defaultParametrs: NewsRequestParameters {
         NewsRequestParameters()
     }
 
     var toDictionary: [String: Any] {
-        var dictionary = [
-             "language": language,
-             "apikey": apikey
+        [
+            "q": request,
+            "pageSize": pageSize,
+            "language": language,
         ]
-        if let request = request {
-            dictionary.updateValue(request, forKey: "q")
-        }
-        return dictionary
     }
 }
-//MARK: Docs
-//https://newsdata.io/docs
+
+// MARK: Docs
+
+// https://newsapi.org/docs/
