@@ -92,6 +92,9 @@ extension NewsViewController: UITableViewDataSource {
 
 extension NewsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let articleViewController = getViewController(viewStoryboardID: "ArticleViewController") as! ArticleViewController
+        articleViewController.setArticle(articles[indexPath.row])
+        navigationController?.pushViewController(articleViewController, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
