@@ -13,10 +13,12 @@ final class ArticleTableViewHeader: UIView {
     @IBOutlet var authorLabel: UILabel!
     @IBOutlet var articleHeaderLabel: UILabel!
     @IBOutlet var articleImageView: UIImageView!
-
+    let tapGestureRecognizer = UITapGestureRecognizer()
+       
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadNib()
+        addGestureRecognizer(tapGestureRecognizer)
     }
 
     required init?(coder: NSCoder) {
