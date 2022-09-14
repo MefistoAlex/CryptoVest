@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import UniformTypeIdentifiers
 
 final class NewsViewController: UIViewController {
     private var coins: [Coin] = []
@@ -94,6 +95,7 @@ extension NewsViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 
+
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if isLoading {
             return UIView()
@@ -102,7 +104,11 @@ extension NewsViewController: UITableViewDelegate {
             if articles.count > 0 {
                 headerView.setArticle(article: articles[0])
             }
+            headerView.tapGestureRecognizer.addTarget(self, action: #selector(headerTapped))
             return headerView
         }
     }
+    @objc private func headerTapped() {
+           //TODO: add showing article
+        }
 }
