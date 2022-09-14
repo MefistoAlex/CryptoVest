@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B007153E28D20DDA005D1590 /* ArticleDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B007153D28D20DDA005D1590 /* ArticleDetailsTableViewCell.swift */; };
 		B00EE1EA28A6593000502F3F /* TopCoinsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00EE1E928A6593000502F3F /* TopCoinsTableViewCell.swift */; };
 		B00EE1F228A6BFEF00502F3F /* ArticleTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B00EE1F128A6BFEF00502F3F /* ArticleTableViewHeader.xib */; };
 		B00EE1F428A6C09B00502F3F /* ArticleTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00EE1F328A6C09B00502F3F /* ArticleTableViewHeader.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B007153D28D20DDA005D1590 /* ArticleDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		B00EE1E928A6593000502F3F /* TopCoinsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCoinsTableViewCell.swift; sourceTree = "<group>"; };
 		B00EE1F128A6BFEF00502F3F /* ArticleTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewHeader.xib; sourceTree = "<group>"; };
 		B00EE1F328A6C09B00502F3F /* ArticleTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewHeader.swift; sourceTree = "<group>"; };
@@ -153,6 +155,8 @@
 		B01FFD7D289E67560053C438 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B06D712028CF2B0300F73254 /* ArticleViewController.swift */,
+				B007153D28D20DDA005D1590 /* ArticleDetailsTableViewCell.swift */,
 				B036A82B28A570C6002C88E9 /* News */,
 				B036A82A28A570BC002C88E9 /* Coins */,
 			);
@@ -181,7 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				B08BFB4328A297DC00B7B442 /* NewsViewController.swift */,
-				B06D712028CF2B0300F73254 /* ArticleViewController.swift */,
 				B07FF65228A77C3700004160 /* TableViewCells */,
 				B07FF65328A77C7200004160 /* TableViewHeader */,
 			);
@@ -354,6 +357,7 @@
 				B088082B28B00DB1006E5C25 /* CoinLogoRequestResponce.swift in Sources */,
 				B063F4DC28AF8A7B00E223A8 /* CoinResponceStatus.swift in Sources */,
 				B063F4DA28AF891900E223A8 /* CoinRequestResponce.swift in Sources */,
+				B007153E28D20DDA005D1590 /* ArticleDetailsTableViewCell.swift in Sources */,
 				B08BFB4228A2762F00B7B442 /* Article.swift in Sources */,
 				B036A82E28A57183002C88E9 /* Extensions.swift in Sources */,
 				B0419CCC28CC902D0074809B /* NewsRequestResponce.swift in Sources */,
