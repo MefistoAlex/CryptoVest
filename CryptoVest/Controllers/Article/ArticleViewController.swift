@@ -5,8 +5,8 @@
 //  Created by Alexandr Mefisto on 12.09.2022.
 //
 
-import UIKit
 import SDWebImage
+import UIKit
 
 final class ArticleViewController: UIViewController {
     private var article: Article?
@@ -37,6 +37,7 @@ extension ArticleViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         0.33 * view.bounds.height
     }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         1
     }
