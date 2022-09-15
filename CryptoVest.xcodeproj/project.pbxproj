@@ -95,6 +95,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B007153F28D3712C005D1590 /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				B06D712028CF2B0300F73254 /* ArticleViewController.swift */,
+				B007153D28D20DDA005D1590 /* ArticleDetailsTableViewCell.swift */,
+			);
+			path = Article;
+			sourceTree = "<group>";
+		};
 		B01FFD5A289E60420053C438 = {
 			isa = PBXGroup;
 			children = (
@@ -155,8 +164,7 @@
 		B01FFD7D289E67560053C438 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B06D712028CF2B0300F73254 /* ArticleViewController.swift */,
-				B007153D28D20DDA005D1590 /* ArticleDetailsTableViewCell.swift */,
+				B007153F28D3712C005D1590 /* Article */,
 				B036A82B28A570C6002C88E9 /* News */,
 				B036A82A28A570BC002C88E9 /* Coins */,
 			);
