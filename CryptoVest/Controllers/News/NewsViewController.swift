@@ -22,9 +22,6 @@ final class NewsViewController: UIViewController {
         }
     }
 
-    @IBOutlet private var tableView: UITableView!
-    @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
-
     private lazy var coinService: CoinAPIServiceInterface = {
         CoinAPIService()
     }()
@@ -32,6 +29,11 @@ final class NewsViewController: UIViewController {
     private lazy var newsService: NewsAPIServiceInterface = {
         NewsAPIService()
     }()
+
+    // MARK: Outlets
+
+    @IBOutlet private var tableView: UITableView!
+    @IBOutlet private var loadingIndicator: UIActivityIndicatorView!
 
     // MARK: Lyfecycle
 
@@ -50,17 +52,24 @@ final class NewsViewController: UIViewController {
                 if let articles = articles {
                     self.articles = articles
                 }
-                self.coinService.getCoins(path: .latests) { coins, _ in
-                    if let coins = coins {
-                        self.coins = coins
-                    }
-                    self.tableView.reloadData()
-                    self.isLoading = false
-                }
+                self.tableView.reloadData()
+                self.isLoading = false
             }
         }
 
         setHeader()
+    }
+
+    // MARK: Privates
+
+    private func showArticleDetails(index: Int) {
+        let articleViewController = getViewController(viewStoryboardID: "ArticleViewController") as! ArticleViewController
+        articleViewController.setArticle(articles[index])
+        navigationController?.pushViewController(articleViewController, animated: true)
+    }
+
+    @objc private func headerTapped() {
+        showArticleDetails(index: 0)
     }
 }
 
@@ -92,12 +101,11 @@ extension NewsViewController: UITableViewDataSource {
 
 extension NewsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let articleViewController = getViewController(viewStoryboardID: "ArticleViewController") as! ArticleViewController
-        articleViewController.setArticle(articles[indexPath.row])
-        navigationController?.pushViewController(articleViewController, animated: true)
+        if indexPath.row > 0 {
+            showArticleDetails(index: indexPath.row)
+        }
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if isLoading {
@@ -111,7 +119,4 @@ extension NewsViewController: UITableViewDelegate {
             return headerView
         }
     }
-    @objc private func headerTapped() {
-           //TODO: add showing article
-        }
 }
