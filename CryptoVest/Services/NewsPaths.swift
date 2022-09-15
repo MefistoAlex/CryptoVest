@@ -19,6 +19,8 @@ enum NewsPaths {
     static var headers: [String: String] {
         return ["X-Api-Key": "03ab902f6f0e4fddb155f62a4fe2de1f"]
     }
-    //MARK: Docs
-    //https://newsapi.org/docs
+
+    // MARK: Docs
+
+    // https://newsapi.org/docs
 }
