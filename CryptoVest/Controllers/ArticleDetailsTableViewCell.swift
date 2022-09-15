@@ -8,20 +8,17 @@
 import UIKit
 
 final class ArticleDetailsTableViewCell: UITableViewCell {
-    @IBOutlet private var articleImageView: UIImageView!
     @IBOutlet private var articleDescriptionLabel: UILabel!
     @IBOutlet private var articleContentLabel: UILabel!
+    @IBOutlet private var articleTitleLabel: UILabel!
     
-   
 
     @IBAction func getNotificationButtonDidTap(_ sender: Any) {
     }
     
     func setArticle(_ article : Article) {
-        if let urlString = article.urlToImage {
-            articleImageView.sd_setImage(with: URL(string: urlString))
-        }
         articleDescriptionLabel.text = article.description
         articleContentLabel.text = article.content
+        articleTitleLabel.text = article.title
     }
 }
