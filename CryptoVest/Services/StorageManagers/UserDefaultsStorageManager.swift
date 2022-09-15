@@ -13,13 +13,13 @@ class UserDefaultsStorageManager: StorageManager {
         favourites.insert(coin.id)
         setFavouriteCoins(coinsIdSet: favourites)
     }
-    
+
     func removeCoin(coin: Coin) {
         var favourites = getFavouriteCoins()
         favourites.remove(coin.id)
         setFavouriteCoins(coinsIdSet: favourites)
     }
-    
+
     func setFavouriteCoins(coinsIdSet: Set<Int>) {
         UserDefaults.standard.set(Array(coinsIdSet), forKey: key)
     }
