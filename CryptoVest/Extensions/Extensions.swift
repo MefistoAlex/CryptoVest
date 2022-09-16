@@ -19,6 +19,7 @@ enum CustomImages: String {
     case logo
     case arrowUp = "ArrowUp"
     case arrowDown = "ArrowDown"
+    case shareLink
 }
 
 extension UIViewController {
