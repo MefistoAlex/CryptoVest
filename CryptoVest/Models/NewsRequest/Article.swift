@@ -18,8 +18,9 @@ struct Article: Decodable {
     var date: Date {
         guard let pubDate = publishedAt else { return Date() }
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-ddTHH:mm:ssZ"
-        return dateFormatter.date(from: pubDate) ?? Date()
+        dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"
+        let date = dateFormatter.date(from: pubDate)
+        return date ?? Date()
     }
 }
 
@@ -47,7 +48,7 @@ extension Article {
         }
 
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy.MM.dd"
+        dateFormatter.dateFormat = "dd.MM.yyyy"
 
         return dateFormatter.string(from: date)
     }
