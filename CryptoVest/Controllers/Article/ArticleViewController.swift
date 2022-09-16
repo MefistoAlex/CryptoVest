@@ -21,11 +21,21 @@ final class ArticleViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-
+        let notificationBellItem = UIBarButtonItem(image: UIImage(systemName: "bell.fill"), style: .plain, target: self, action: #selector(showNotifications))
+        let shareLinkItem = UIBarButtonItem(image: UIImage(named: CustomImages.shareLink.rawValue), style: .plain, target: self, action: #selector(shareLink))
+        
+        navigationItem.rightBarButtonItem = notificationBellItem
+        navigationItem.rightBarButtonItems?.insert(shareLinkItem, at: 1)
         navigationController?.navigationBar.tintColor = .white
         setHeader()
     }
-
+    
+    @objc private func shareLink() {
+        print("shareLink")
+    }
+    @objc private func showNotifications() {
+        print("Notification")
+    }
     func setArticle(_ article: Article) {
         self.article = article
     }
