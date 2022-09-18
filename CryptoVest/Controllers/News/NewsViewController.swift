@@ -49,7 +49,8 @@ final class NewsViewController: UIViewController {
                 self.coins = coins
             }
             self.newsService.getNews { articles, _ in
-                if let articles = articles {
+                if var articles = articles {
+                    articles.sort { $0.date > $1.date }
                     self.articles = articles
                 }
                 self.tableView.reloadData()
