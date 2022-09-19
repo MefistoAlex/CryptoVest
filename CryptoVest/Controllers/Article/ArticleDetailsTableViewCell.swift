@@ -8,11 +8,13 @@
 import UIKit
 
 final class ArticleDetailsTableViewCell: UITableViewCell {
+    var delegate: ArticleViewController?
     @IBOutlet private var articleDescriptionLabel: UILabel!
     @IBOutlet private var articleContentLabel: UILabel!
     @IBOutlet private var articleTitleLabel: UILabel!
 
     @IBAction func getNotificationButtonDidTap(_ sender: Any) {
+        delegate?.bellDidTab()
     }
 
     func setArticle(_ article: Article) {
