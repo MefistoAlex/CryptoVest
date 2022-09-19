@@ -12,15 +12,15 @@ enum NewsPaths {
     var url: String {
         switch self {
         case .news:
-            return "https://newsapi.org/v2/everything"
+            return "https://api.newscatcherapi.com/v2/search"
         }
     }
 
     static var headers: [String: String] {
-        return ["X-Api-Key": "03ab902f6f0e4fddb155f62a4fe2de1f"]
+        return ["x-api-key": "14nRIX0mmr6bRyruUd-rkGr7ZTw5T9cIfbr_3CLZudw"]
     }
 
     // MARK: Docs
 
-    // https://newsapi.org/docs
+    // https://docs.newscatcherapi.com/api-docs/endpoints/search-news
 }
