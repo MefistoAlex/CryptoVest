@@ -89,6 +89,13 @@ final class CoinsViewController: UIViewController {
             self.refreshControl.endRefreshing()
         }
     }
+    
+    
+    
+    @IBAction func bellDidTab(_ sender: UIBarButtonItem) {
+        showNotifications()
+        //TODO: not came here
+    }
 }
 
 // MARK: Table View delegate
