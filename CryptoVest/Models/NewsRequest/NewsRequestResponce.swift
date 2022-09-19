@@ -8,6 +8,6 @@
 import Foundation
 struct NewsRequestResponce: Decodable {
     let status: String
-    let totalResults: Int
+    let total_hits: Int
     let articles: [Article]
 }
