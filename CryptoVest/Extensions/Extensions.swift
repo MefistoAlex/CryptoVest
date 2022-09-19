@@ -61,4 +61,8 @@ extension UIViewController {
         let controller = storyboard.instantiateViewController(withIdentifier: viewStoryboardID)
         return controller
     }
+    func showNotifications(){
+        let articleViewController = getViewController(viewStoryboardID: "NotificationViewController") as! NotificationViewController
+        present(articleViewController, animated: true)
+    }
 }
