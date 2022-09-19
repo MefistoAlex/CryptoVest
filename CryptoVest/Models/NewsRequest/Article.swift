@@ -15,10 +15,20 @@ struct Article: Decodable {
     let content: String
     var author: String?
 
+    enum CodingKeys: String, CodingKey {
+        case title
+        case url = "link"
+        case urlToImage = "media"
+        case description = "excerpt"
+        case publishedAt = "published_date"
+        case content = "summary"
+        case author
+    }
+
     var date: Date {
         guard let pubDate = publishedAt else { return Date() }
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'"
+        dateFormatter.dateFormat = "yyyy'-'MM'-'dd' 'HH':'mm':'ss"
         let date = dateFormatter.date(from: pubDate)
         return date ?? Date()
     }
