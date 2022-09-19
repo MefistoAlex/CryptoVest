@@ -21,7 +21,7 @@ final class ArticleViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        let notificationBellItem = UIBarButtonItem(image: UIImage(systemName: "bell.fill"), style: .plain, target: self, action: #selector(showNotifications))
+        let notificationBellItem = UIBarButtonItem(image: UIImage(systemName: "bell.fill"), style: .plain, target: self, action: #selector(bellDidTab))
         let shareLinkItem = UIBarButtonItem(image: UIImage(named: CustomImages.shareLink.rawValue), style: .plain, target: self, action: #selector(shareLink))
 
         navigationItem.rightBarButtonItem = notificationBellItem
@@ -41,8 +41,9 @@ final class ArticleViewController: UIViewController {
         present(activityViewController, animated: true, completion: nil)
     }
 
-    @objc private func showNotifications() {
-        print("Notification")
+    @objc func bellDidTab() {
+        let articleViewController = getViewController(viewStoryboardID: "NotificationViewController") as! NotificationViewController
+        present(articleViewController, animated: true)
     }
 
     func setArticle(_ article: Article) {
@@ -66,6 +67,7 @@ extension ArticleViewController: UITableViewDataSource {
         if let article = article {
             cell.setArticle(article)
         }
+        cell.delegate = self
         return cell
     }
 }
