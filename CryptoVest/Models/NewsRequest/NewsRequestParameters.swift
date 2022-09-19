@@ -19,8 +19,8 @@ struct NewsRequestParameters {
     var toDictionary: [String: Any] {
         [
             "q": request,
-            "pageSize": pageSize,
-            "language": language,
+            "page_size": pageSize,
+            "lang": language,
         ]
     }
 }
