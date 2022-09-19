@@ -69,9 +69,13 @@ final class NewsViewController: UIViewController {
         navigationController?.pushViewController(articleViewController, animated: true)
     }
 
+    @IBAction func bellDidTab(_ sender: Any) {
+        showNotifications()
+    }
     @objc private func headerTapped() {
         showArticleDetails(index: 0)
     }
+   
 }
 
 // MARK: Table View data sourse
